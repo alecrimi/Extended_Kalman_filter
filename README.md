@@ -18,7 +18,7 @@ Respectively those are given in a VPR files ( pressure streaming) and SXI for th
 Example of use: 
 assuming we have two files as test.vpr and test.sxi
 test_star_kalman('test');
-This is the semi-automatic version of the algorithm, therefore remember to initialize the tracking as shown in the picture initialization.png
+This is the semi-automatic version of the algorithm, therefore remember to initialize the tracking as shown in the picture initialization.png ![alt tag](https://github.com/alecrimi/Extended_Kalman_filter/blob/master/initialization.png)
 To run this example you need to download the ultrasound streaming (test.sxi) from https://www.dropbox.com/s/0j63ixt7hxkgltk/test.sxi?dl=0 
 For the full complete version, with the automatic initialization step, please refer to the C++ implementation.
 
