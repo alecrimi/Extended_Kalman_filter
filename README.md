@@ -19,6 +19,7 @@ Example of use:
 assuming we have two files as test.vpr and test.sxi
 test_star_kalman('test');
 This is the semi-automatic version of the algorithm, therefore remember to initialize the tracking as shown in the picture initialization.png
+To run this example you need to download the ultrasound streaming (test.sxi) from https://www.dropbox.com/s/0j63ixt7hxkgltk/test.sxi?dl=0 
 For the full complete version, with the automatic initialization step, please refer to the C++ implementation.
 
 The test_star_kalman.m script iterates through the whole streaming given in those files. This is a public function which calls the main algorithm which is 
