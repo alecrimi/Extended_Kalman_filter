@@ -12,12 +12,14 @@ This folder contains the source code for Star-Kalman tracking for vessel in Ultr
 Version 0.1
 
 -------------------------------------
-The scripts assume there is available a video ultrasound streaming, a pressure streaming, and a manual annotation of the vessel giving the ground truth.  
-Respectively those are given in a VPR files (ultrasound and pressure) and SXI for the manual annotations.
+The scripts assume there is available a video ultrasound streaming, a pressure streaming, and a manual annotation of the vessel giving the ground truth. 
+Respectively those are given in a VPR files ( pressure streaming) and SXI for the ultrasound streaming or manual annotations.
 
 Example of use: 
-assuming we have two files as patients001.vpr and patients001.sxi
-test_star_kalman('patients001');
+assuming we have two files as test.vpr and test.sxi
+test_star_kalman('test');
+This is the semi-automatic version of the algorithm, therefore remember to initialize the tracking as shown in the picture initialization.png
+For the full complete version, with the automatic initialization step, please refer to the C++ implementation.
 
 The test_star_kalman.m script iterates through the whole streaming given in those files. This is a public function which calls the main algorithm which is 
 performed frame by frame.

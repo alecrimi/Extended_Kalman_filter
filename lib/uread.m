@@ -395,9 +395,9 @@ header.ld = hinfo(18);
 header.extra = hinfo(19);
 
 %frameSizeBytes=(header.w*header.h)*2+(1*4);
-if mod(header.ss,8)~=0
-    error(['Unsupported sample size of ' num2str(header.ss) ' bits when reading the header.  Sample size must be a multiple of 8 bits.']);
-end
+%if mod(header.ss,8)~=0
+%    error(['Unsupported sample size of ' num2str(header.ss) ' bits when reading the header.  Sample size must be a multiple of 8 bits.']);
+%end
 
 fPass=fseek(fid,0,'eof');
 if fPass~=0

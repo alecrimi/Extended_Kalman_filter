@@ -1,27 +1,6 @@
 function [ header, images, pressures ] = vpReader( fileName, dataFileName, frames )
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%   Star-Kalman Matlab implementation as described in the paper:
-%   Crimi, Alessandro, et al. "Vessel tracking for ultrasound-based venous pressure measurement." 
-%   2014 IEEE 11th International Symposium on Biomedical Imaging (ISBI). IEEE, 2014.
-%
-%   A.Crimi ETH 08/12/2012
-%
-%   Low-level reading file for the VPR file format.
-%   
-%   Input: 
-%   fileName: complete filename and extension for the file comprising the pressure values.
-%   dataFileName: complete filename and extension for the file comprising the image streaming. 
-%   Those two filenames can be the same. 
-%   frames: number of expected frames
-%
-%   Output:
-%   header: structure comprising several information about the acquisition.
-%   images: video sequence from the ultrasound streaming
-%   pressures: pressure sequence
-%
-%
-% This is the description of the data structure
+%vpReader Reading of VeinPress files
+
 %
 %============ HEADER V1 ===================
 %  version                 uint8_t                 (must be 1)
@@ -69,9 +48,7 @@ function [ header, images, pressures ] = vpReader( fileName, dataFileName, frame
 %  Frame data              uint8_t * (FrameFormat.width *
 %                                     FrameFormat.height *
 %                                     FrameFormat.byteSize) * NFrames
- 
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
 
 [fid, msg] = fopen( fileName, 'r' );
 if( fid < 0 )
@@ -130,6 +107,7 @@ else
         fclose( fidD );
     end
 end
+ 
 images = reshape( tmp, [ width height readFrames ] );
 
 %images = zeros( 0 );

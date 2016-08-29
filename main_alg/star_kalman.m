@@ -1,4 +1,4 @@
-function  [x preassure_graph mask new_PVP PVP_seq] = star_kalman(Im, kfinit, x, preassure_graph, pressure_data, PVP, pressure_stc )
+function  [x preassure_graph mask pressure_stc] = star_kalman(Im, kfinit, x, preassure_graph, pressure_data, PVP, pressure_stc )
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   Star-Kalman Matlab implementation as described in the paper:
@@ -113,7 +113,7 @@ function  [x preassure_graph mask new_PVP PVP_seq] = star_kalman(Im, kfinit, x, 
     end
 
     if( pressure_stc.PVP_seq(end)>0 && new_PVP==0)
-       fprintf('The Mean Local pressure value is %f \n',mean(PVP_seq));
+       fprintf('The Mean Local pressure value is %f \n',mean(pressure_stc.PVP_seq));
        pressure_stc.PVP_seq=0;
     end
     
@@ -125,6 +125,8 @@ function  [x preassure_graph mask new_PVP PVP_seq] = star_kalman(Im, kfinit, x, 
         end
     end
  
+    pressure_stc.PPVP = new_PVP;
+    
 end %End function
 
  
